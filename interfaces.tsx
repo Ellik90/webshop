@@ -1,5 +1,5 @@
-import { CartItem } from "../data";
-import { Customer } from "./contexts/CustomerContext";
+import { CartItem } from "./data";
+import { Customer } from "././src/contexts/CustomerContext";
 
 export interface Order {
   orderNr: string;

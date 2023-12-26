@@ -6,7 +6,7 @@ import {
     useMediaQuery,
   } from "@mui/material"; 
   import { useParams } from "react-router-dom";
-  import AddtoCartButton from "../components/AddtoCartButton";
+  import AddtoCartButton from "../components/AddToCartButton";
   import { useProductContext } from "../contexts/ProductContext";
   
   export default function ProductPage() {

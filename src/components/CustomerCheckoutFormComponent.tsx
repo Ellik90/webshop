@@ -15,7 +15,7 @@ import { z } from "zod";
 import { useCart } from "../contexts/CartContext";
 import { useCustomerContext } from "../contexts/CustomerContext";
 import { useOrderContext } from "../contexts/OrderContext";
-import { Order } from "../interfaces";
+import {Order} from "../../interfaces";
 
 const FormSchema = z.object({
   name: z.string().min(1, { message: "Namn är obligatoriskt." }),

@@ -6,7 +6,7 @@ function getItemWithFallback<T>(key: string, fallback: T): T {
     try {
       return JSON.parse(item) as T;
     } catch (error) {
-     
+        console.error("Felaktig JSON i localStorage:", error);
     }
   }
   return fallback;

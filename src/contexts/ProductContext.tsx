@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext } from "react";
 import { Product, products } from "../../data/index";
 
-import useLocalStorageState from "../useLocalStorage";
+import useLocalStorageState from "../../useLocalStorage";
 
 interface ProductContextType {
   allProducts: Product[];

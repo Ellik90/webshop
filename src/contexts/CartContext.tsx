@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext } from "react";
 import { CartItem, Product } from "../../data";
-import useLocalStorageState from "../useLocalStorage";
+import useLocalStorageState from "../../useLocalStorage";
 
 interface CartContextType {
   cart: CartItem[];
