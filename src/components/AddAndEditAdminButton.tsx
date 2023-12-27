@@ -9,6 +9,7 @@ const AddAndEditAdminButton = (props: Props) => {
   return (
     <Button
       type="submit"
+      data-cy="admin-add-product"
       variant="contained"
       sx={{ backgroundColor: "black" }}
     >

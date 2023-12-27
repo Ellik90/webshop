@@ -11,15 +11,16 @@ import React from "react";
 
 interface TableMUIProps {
   titleRow: string[];
-  // Här har jag any då jag vill kunna ha vilken typ som helst? en card komponent, en bild, text osv?
+  //här har jag any då jag vill kunna ha vilken typ som helst? en card komponent, en bild, text osv?
   cellRows: any[];
+  datacy: string;
 }
 
-const TableMUI: React.FC<TableMUIProps> = ({ titleRow, cellRows }) => {
+const TableMUI: React.FC<TableMUIProps> = ({ titleRow, cellRows, datacy }) => {
   return (
     <TableContainer component={Paper} elevation={2}>
       <Table aria-label="simple table">
-        <TableHead>
+        <TableHead data-cy="product-form">
           <TableRow>
             {titleRow.map((title) => (
               <TableCell
@@ -36,11 +37,12 @@ const TableMUI: React.FC<TableMUIProps> = ({ titleRow, cellRows }) => {
         </TableHead>
         <TableBody>
           {cellRows.map((row, rowIndex) => (
-            <TableRow key={rowIndex}>
+            <TableRow key={rowIndex} data-cy={datacy}>
               {row.map(
                 (cell: { property: ""; datacyCell: "" }, cellIndex: number) => (
                   <TableCell
                     key={cellIndex}
+                    data-cy={cell.datacyCell}
                     sx={{ fontSize: "12px", whiteSpace: "nowrap" }}
                   >
                     {cell.property}
@@ -56,3 +58,5 @@ const TableMUI: React.FC<TableMUIProps> = ({ titleRow, cellRows }) => {
 };
 
 export default TableMUI;
+
+  

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import AddtoCartButton from "../components/AddToCartButton";
+import AddtoCartButton from "../components/AddtoCartButton";
 import { useProductContext } from "../contexts/ProductContext";
 
 export default function IndexPage() {

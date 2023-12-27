@@ -82,7 +82,11 @@ export default function ConfirmationPage() {
           width={isMobileOrTabletScreen ? "100%" : "50%"}
           sx={{ paddingY: 1.5, paddingX: 1 }}
         >
-          <TableMUI titleRow={orderTitleRows} cellRows={orderRow} />
+          <TableMUI
+            titleRow={orderTitleRows}
+            cellRows={orderRow}
+            datacy="cart-item"
+          />
         </Box>
 
         <Box
@@ -90,7 +94,11 @@ export default function ConfirmationPage() {
           sx={{ paddingY: 1.5, paddingX: 1 }}
         >
           {order ? (
-            <TableMUI titleRow={addressTitleRow} cellRows={addressRow} />
+            <TableMUI
+              titleRow={addressTitleRow}
+              cellRows={addressRow}
+              datacy="cart-item"
+            />
           ) : (
             <Typography>Laddar uppgifter....</Typography>
           )}
@@ -123,7 +131,11 @@ export default function ConfirmationPage() {
         }}
       >
         {order && order.cart ? (
-          <TableMUI titleRow={productTitleRows} cellRows={productRows} />
+          <TableMUI
+            titleRow={productTitleRows}
+            cellRows={productRows}
+            datacy="cart-item"
+          />
         ) : (
           <Typography>Väntar på att produkter ska laddas...</Typography>
         )}
