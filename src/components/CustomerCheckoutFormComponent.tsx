@@ -15,7 +15,7 @@ import { z } from "zod";
 import { useCart } from "../contexts/CartContext";
 import { useCustomerContext } from "../contexts/CustomerContext";
 import { useOrderContext } from "../contexts/OrderContext";
-import {Order} from "../../interfaces";
+import {Order} from "../interfaces";
 
 const FormSchema = z.object({
   name: z.string().min(1, { message: "Namn är obligatoriskt." }),
@@ -60,6 +60,7 @@ export default function FormComponent(props: Props) {
     defaultValues: props.customer || {},
     resolver: zodResolver(FormSchema),
   });
+  
 
   const handleOnSubmit = async () => {
     const customerData = {
@@ -93,7 +94,6 @@ export default function FormComponent(props: Props) {
   return (
     <form
       onSubmit={handleSubmit(handleOnSubmit)}
-      data-cy="customer-form"
       className="flex flex-1 flex-col items-center"
     >
       <Box

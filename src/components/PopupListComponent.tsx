@@ -5,9 +5,6 @@ import { CartItem } from "../../data";
 
 interface Props {
   products?: CartItem[] | CartItem;
-  datacy?: string;
-  titleDatacy?: string;
-  priceDatacy?: string;
   totalPrice?: string;
 }
 

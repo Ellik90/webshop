@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useContext } from "react";
-import useLocalStorageState from "../../useLocalStorage";
-import { Order } from "../../interfaces";
+import useLocalStorageState from "../useLocalStorage";
+import { Order } from "../interfaces";
 
 type OrderContextType = {
   order: Order;

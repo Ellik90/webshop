@@ -7,20 +7,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
-import CheckoutPage from "././src/pages/CheckoutPage";
-import IndexPage from "././src/pages/IndexPage";
-import RootLayout from "././src/pages/RootLayout";
+import CheckoutPage from "./pages/CheckoutPage";
+import IndexPage from "./pages/IndexPage";
+import RootLayout from "./pages/RootLayout";
 
-import { CustomerProvider } from "././src/contexts/CustomerContext";
-import ConfirmationPage from "./src/pages/ConfirmationPage";
+import { CustomerProvider } from "./contexts/CustomerContext";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
-import AdminPage from "./src/pages/AdminPage";
-import AdminProductPage from "./src/pages/AdminProductPage";
-import ProductPage from "./src/pages/ProductPage";
-import { CartProvider } from "./src/contexts/CartContext";
-import { OrderProvider } from "./src/contexts/OrderContext";
-import { ProductProvider } from "./src/contexts/ProductContext";
-import ErrorPage from "./src/pages/ErrorPage";
+import AdminPage from "./pages/AdminPage";
+import AdminProductPage from "./pages/AdminProductPage";
+import ProductPage from "./pages/ProductPage";
+import { CartProvider } from "./contexts/CartContext";
+import { OrderProvider } from "./contexts/OrderContext";
+import { ProductProvider } from "./contexts/ProductContext";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

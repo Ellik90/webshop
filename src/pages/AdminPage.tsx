@@ -28,14 +28,13 @@ export default function AdminPage() {
       property: <img src={p.image} alt="Product" width="20" height="20" />,
       datacyCell: "",
     },
-    { property: p.id, datacyCell: "product-id" },
-    { property: p.title, datacyCell: "product-title" },
-    { property: p.price, datacyCell: "product-price" },
+    { property: p.id, datacyCell: "" },
+    { property: p.title, datacyCell: "" },
+    { property: p.price, datacyCell: "" },
     {
       property: (
         <Button
           variant="contained"
-          data-cy="admin-remove-product"
           sx={{
             backgroundColor: "black",
             fontSize: "10px",
@@ -48,13 +47,12 @@ export default function AdminPage() {
           Radera
         </Button>
       ),
-      datacyCell: " ",
+      datacyCell: "",
     },
     {
       property: (
         <Button
           variant="contained"
-          data-cy="admin-edit-product"
           sx={{
             backgroundColor: "black",
             fontSize: "10px",
@@ -67,7 +65,7 @@ export default function AdminPage() {
           Redigera
         </Button>
       ),
-      datacyCell: " ",
+      datacyCell: "",
     },
   ]);
 
@@ -83,41 +81,30 @@ export default function AdminPage() {
                 backgroundColor: "#00695c",
               },
             }}
-            data-cy="admin-add-product"
           >
             Lägg till produkt
           </Button>
         </NavLink>
       </Box>
 
-      <TableMUI
-        titleRow={titleRows}
-        cellRows={productRows}
-        datacy="product"
-        data-cy="product-form"
-      />
+      <TableMUI titleRow={titleRows} cellRows={productRows} />
 
       <Dialog open={isPopupOpen} onClose={() => setIsPopupOpen(false)}>
         <DialogTitle>Product Details</DialogTitle>
         <DialogContent sx={{ display: "flex" }}>
           {selectedProduct && (
-            <Box data-cy="product">
-              <p data-cy="product-title" className="flex-1">
-                ID: {selectedProduct.id}
-              </p>
+            <Box>
+              <p>ID: {selectedProduct.id}</p>
               <p>Title: {selectedProduct.title}</p>
               <p>Description: {selectedProduct.description}</p>
               <p>Price: {selectedProduct.price}</p>
-              {
-                <Button
-                  variant="contained"
-                  data-cy="confirm-delete-button"
-                  color="primary"
-                  onClick={() => handleRemoveProduct(selectedProduct)}
-                >
-                  Ta bort
-                </Button>
-              }
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => handleRemoveProduct(selectedProduct)}
+              >
+                Ta bort
+              </Button>
             </Box>
           )}
         </DialogContent>
@@ -125,3 +112,4 @@ export default function AdminPage() {
     </Box>
   );
 }
+

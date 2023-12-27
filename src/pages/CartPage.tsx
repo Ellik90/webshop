@@ -24,12 +24,10 @@ export default function CartPage() {
                 {
                   icon: <AddCircleIcon />,
                   onClick: () => addToCart(p),
-                  datacy: "increase-quantity-button",
                 },
                 {
                   icon: <RemoveCircleIcon />,
                   onClick: () => removeFromCart(p),
-                  datacy: "decrease-quantity-button",
                 },
               ],
             }))}
@@ -42,7 +40,7 @@ export default function CartPage() {
             mx={2}
           >
             <Typography>Totalt pris </Typography>
-            <Typography data-cy="total-price">{totalPrice} kr</Typography>
+            <Typography>{totalPrice} kr</Typography>
           </Typography>
         </Box>
       ) : (

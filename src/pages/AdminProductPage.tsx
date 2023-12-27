@@ -1,4 +1,3 @@
-
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Paper, TextField, Typography } from '@mui/material';
 import { useForm } from 'react-hook-form';
@@ -78,13 +77,12 @@ export default function AdminProductPage() {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h6" padding={2} data-cy="product-form">
+        <Typography variant="h6" padding={2}>
           {productToEdit ? 'Redigera produkt' : 'Lägg till ny produkt'}
         </Typography>
 
         <form
           onSubmit={handleSubmit(handleOnSubmit)}
-          data-cy="product-form"
           className="flex flex-1 flex-col items-center"
         >
           <Box
@@ -98,16 +96,12 @@ export default function AdminProductPage() {
             <TextField
               label="Titel"
               {...register('title')}
-              inputProps={{
-                'data-cy': 'product-title',
-              }}
               variant="standard"
               defaultValue={productToEdit?.title}
               helperText={
                 formState.errors.title ? (
                   <Typography
                     variant="caption"
-                    data-cy="product-title-error"
                     sx={{ color: 'red' }}
                   >
                     {formState.errors.title?.message}
@@ -120,16 +114,12 @@ export default function AdminProductPage() {
             <TextField
               label="Beskrivning"
               {...register('description')}
-              inputProps={{
-                'data-cy': 'product-description',
-              }}
               variant="standard"
               defaultValue={productToEdit?.description}
               helperText={
                 formState.errors.description ? (
                   <Typography
                     variant="caption"
-                    data-cy="product-description-error"
                     sx={{ color: 'red' }}
                   >
                     {formState.errors.description?.message}
@@ -143,15 +133,11 @@ export default function AdminProductPage() {
               label="Pris"
               {...register('price')}
               variant="standard"
-              inputProps={{
-                'data-cy': 'product-price',
-              }}
               defaultValue={productToEdit?.price}
               helperText={
                 formState.errors.price ? (
                   <Typography
                     variant="caption"
-                    data-cy="product-price-error"
                     sx={{ color: 'red' }}
                   >
                     {formState.errors.price?.message}
@@ -165,15 +151,11 @@ export default function AdminProductPage() {
               label="Bild (url)"
               {...register('image')}
               variant="standard"
-              inputProps={{
-                'data-cy': 'product-image',
-              }}
               defaultValue={productToEdit?.image}
               helperText={
                 formState.errors.image ? (
                   <Typography
                     variant="caption"
-                    data-cy="product-image-error"
                     sx={{ color: 'red' }}
                   >
                     {formState.errors.image?.message}
@@ -201,4 +183,5 @@ export default function AdminProductPage() {
     </Paper>
   );
 }
+
 

@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Button,
   Card,
@@ -12,7 +11,6 @@ import { CartItem } from "../../data";
 
 interface CustomButton {
   icon: React.ReactNode;
-  datacy: string;
   onClick: () => void;
 }
 
@@ -30,7 +28,6 @@ function ListComponent(props: Props) {
       {props.products.map((p) => (
         <ListItem
           key={p.id}
-          data-cy="cart-item"
           sx={{
             display: "flex",
             justifyContent: "space-between",
@@ -51,7 +48,6 @@ function ListComponent(props: Props) {
           </Card>
           <ListItemText
             primary={<Typography variant="body2">{p.title}</Typography>}
-            data-cy="product-title"
             sx={{ padding: "4px" }}
           />
           <ListItemText
@@ -60,24 +56,18 @@ function ListComponent(props: Props) {
                 p.price * p.quantity
               } kr`}</Typography>
             }
-            data-cy="product-price"
             sx={{ padding: "4px" }}
           />
           <ListItemText
             primary={
               <Typography variant="body2">{`${p.quantity} st`}</Typography>
             }
-            data-cy="product-quantity"
             sx={{ padding: "4px" }}
           />
           <div>
             {p.customButtons.map((button, buttonIndex) => (
               <div key={buttonIndex}>
-                <Button
-                  onClick={button.onClick}
-                  data-cy={button.datacy}
-                  sx={{ color: "darkgray" }}
-                >
+                <Button onClick={button.onClick} sx={{ color: "darkgray" }}>
                   {button.icon}
                 </Button>
               </div>
