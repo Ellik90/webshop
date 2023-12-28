@@ -1,16 +1,16 @@
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import {
+  Box,
   Card,
   CardMedia,
   Container,
   Grid,
   Typography,
-  Box,
 } from "@mui/material";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import AddtoCartButton from "../components/AddtoCartButton";
 import { useProductContext } from "../contexts/ProductContext";
+import AddtoCartButton from "../../src/components/AddToCartButton";
 
 export default function IndexPage() {
   const { allProducts } = useProductContext();

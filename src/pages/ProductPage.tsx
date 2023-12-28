@@ -1,12 +1,6 @@
-import {
-  Box,
-  CardMedia,
-  Grid,
-  Typography,
-  useMediaQuery,
-} from "@mui/material"; 
+import { Box, CardMedia, Grid, Typography, useMediaQuery } from "@mui/material";
 import { useParams } from "react-router-dom";
-import AddtoCartButton from "../components/AddtoCartButton";
+import AddtoCartButton from "../../src/components/AddToCartButton";
 import { useProductContext } from "../contexts/ProductContext";
 
 export default function ProductPage() {
@@ -14,7 +8,9 @@ export default function ProductPage() {
   const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
   const { id } = useParams<{ id: string }>();
-  const selectedProduct = allProducts.find((product) => String(product.id) === id);
+  const selectedProduct = allProducts.find(
+    (product) => String(product.id) === id
+  );
 
   // Här kan du välja att använda mockedProducts som fallback om produkten inte finns i useProductContext
 
@@ -23,13 +19,18 @@ export default function ProductPage() {
   }
 
   return (
-    <Grid container justifyContent="center" alignItems="center" spacing={isSmallScreen ? 2 : 3}>
-      <Grid item xs={12} sm={isSmallScreen ? 12 : 5.8} >
+    <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
+      spacing={isSmallScreen ? 2 : 3}
+    >
+      <Grid item xs={12} sm={isSmallScreen ? 12 : 5.8}>
         <CardMedia
           component="img"
           alt={selectedProduct.title}
           sx={{
-            width: "50%", 
+            width: "50%",
             height: "auto",
             border: "30px solid white",
             borderRadius: "15px",
@@ -48,7 +49,7 @@ export default function ProductPage() {
           textAlign="center"
           marginLeft="-13rem"
           sx={{
-            marginLeft: isSmallScreen ? "0" : "-13rem", 
+            marginLeft: isSmallScreen ? "0" : "-13rem",
           }}
         >
           <Typography
@@ -84,5 +85,3 @@ export default function ProductPage() {
     </Grid>
   );
 }
-
-  
